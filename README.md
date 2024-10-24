@@ -386,6 +386,60 @@ In the majority of cases, always go for the strict equal comparison.
 
 ### if-else-if statments
 
+So if we want to do more specific checks it original one was evaluated to `false`, we can always do more if checks or we can chain it in a if-else-if chain.
+
+The difference is that if we have a chain of if-else-if, only one of the checks will run, which means, if on of the checks in the chain is true, the rest will be ignored.
+
+If we just do a number of if checks after each other, every if check will still run even though one of them was evaluated to `true`.
+
+Here is the basic syntax
+
+```js
+if (first condition) {
+    // code
+} else if (next condition) {
+    // code
+} else if (next condition) {
+    // code
+} else if (next condition) {
+    // code
+} else {
+    // code to run as a fallback if every other condition is false.
+}
+```
+
+Let's do an example with driver's license
+
+```js
+const age = 16;
+
+if (age >= 18) {
+  console.log("Great, you can take your driver's license.");
+} else if (age >= 16) {
+  console.log(
+    "Sorry, your are not old enough for a driver's license, but you can start practising."
+  );
+} else {
+  console.log("Sorry, you will have to take the bike.");
+}
+```
+
+There also exists something called a switch statement. But more on that later. Here is a link if you are interested: [switch statements](https://www.w3schools.com/js/js_switch.asp).
+
+### Nested if-statements
+
+if you want to do a check that is dependant on another check you can always nest if statments. But beware, it often leads to messy cody that is hard to read. But it's totally fine to do it.
+
+```js
+if (condition) {
+    if (condition based on earlier condition) {
+        // code to run if nested check is true
+    }
+
+    // code that always run if original condition is true
+}
+```
+
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
@@ -408,6 +462,16 @@ In the majority of cases, always go for the strict equal comparison.
 | `[]` (empty array)      | Object    | Truthy          |
 | Arrays with content     | Object    | Truthy          |
 | Objects with properties | Object    | Truthy          |
+
+Sometimes we just want to evaluate variables directly, for instance, we want to see if a variable is defined or not.
+
+```js
+const name = "Niklas";
+
+if (name) {
+  console.log(`Oh, that's a cool name you have got ${name}`);
+}
+```
 
 [Back to top](#2024-10-24-intro-to-javascript)
 

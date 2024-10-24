@@ -55,10 +55,34 @@ a developer.`; // Works just fine!
 
 // ############ if-else statements ############ //
 
-const age = 16;
+// const age = 16;
 
-if (age > 18) {
-  console.log("You are an adult.");
+// if (age > 18) {
+//   console.log("You are an adult.");
+// } else {
+//   console.log("You are still classed as a minor.");
+// }
+
+// ############ if-else-if statements ############ //
+
+// const age = 10;
+
+// if (age >= 18) {
+//   console.log("Great, you can take your driver's license.");
+// } else if (age >= 16) {
+//   console.log(
+//     "Sorry, your are not old enough for a driver's license, but you can start practising."
+//   );
+// } else {
+//   console.log("Sorry, you will have to take the bike.");
+// }
+
+// ############ Truthy and falsy statements ############ //
+
+const name = "";
+
+if (name) {
+  console.log(`Oh, that's a cool name you have got ${name}`);
 } else {
-  console.log("You are still classed as a minor.");
+  console.log("You don't have name");
 }
