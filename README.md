@@ -28,14 +28,9 @@ We start with the foundations when it comes to JS. Data types, variables, user-i
 - [Basic if-syntax](#basic-if-syntax)
 - [if-else statement](#if-else-statement)
 - [Comparison Operators](#comparison-operators)
-  - [greater then, less then - <, >](#--greater-then-or-less-then)
 - [if-else-if statments](#if-else-if-statments)
 - [Truthy and Falsy](#truthy-and-falsy-values)
 - [Logical Operators](#logical-operators)
-  - [Logical AND - &&](#---logical-and)
-  - [Logical OR - ||](#---logical-or)
-  - [Logical NOT - !](#---logical-not)
-  - [Nullish Coalescing](#---nullish-coalescing)
 
 </details>
 
@@ -127,11 +122,15 @@ const somethingIsFalse = false;
 
 ### Undefined
 
+Se this link for more info: [Undefined - W3schools](https://www.w3schools.com/jsref/jsref_undefined.asp)
+
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
 
 ### Null
+
+Se this link for more info: [Null - Developer Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null)
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
@@ -139,17 +138,23 @@ const somethingIsFalse = false;
 
 ### Object
 
+Se this link for more info: [Object - W3schools](https://www.w3schools.com/js/js_objects.asp)
+
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
 
 ### Array
 
+Se this link for more info: [Arrays - W3schools](https://www.w3schools.com/js/js_arrays.asp)
+
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
 
 ### Functions
+
+Se this link for more info: [Functions - W3schools](https://www.w3schools.com/js/js_functions.asp)
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
@@ -466,10 +471,12 @@ if (condition) {
 Sometimes we just want to evaluate variables directly, for instance, we want to see if a variable is defined or not.
 
 ```js
-const name = "Niklas";
+const name = "";
 
 if (name) {
   console.log(`Oh, that's a cool name you have got ${name}`);
+} else {
+  console.log("You don't have name");
 }
 ```
 
@@ -479,7 +486,33 @@ if (name) {
 
 ### Logical operators
 
+If you want to compare several conditions at the same time, you can use logical operators.
+
 #### `&&` - Logical AND
+
+Is used to check conditions and all of them must be true in order for the entire condition to be true as well.
+
+```js
+const isAnAdult = true;
+const isCool = true;
+const isAwesome = true;
+
+if (isAnAdult && isCool && isAwesome) {
+  console.log("Wow, you are both an adult and cool."); // Will run since all of the above is true.
+}
+```
+
+In the above case, all the "smaller" conditions must be `true` in order for the entire if check to be evaluated to `true`.
+
+```js
+const isAnAdult = false;
+const isCool = true;
+const isAwesome = true;
+
+if (isAnAdult && isCool && isAwesome) {
+  console.log("Wow, you are both an adult and cool."); // Will NOT run since NOT all of the above is true.
+}
+```
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
@@ -487,16 +520,61 @@ if (name) {
 
 #### `||` - Logical OR
 
+Is used to evaluate a if check to true if either one of the "smaller" conditions is true.
+
+```js
+const isAnAdult = false;
+const isCool = true;
+
+if (isAnAdult || isCool) {
+  console.log("Wow, you are adult OR cool."); // Will run since one of them is true.
+}
+```
+
+Or with more conditions
+
+```js
+const isAnAdult = false;
+const isCool = true;
+const isAwesome = true;
+
+if (isAnAdult || isCool || isAwesome) {
+  console.log("Wow, you are an adult or cool or awesome."); // Will run since one of them is true.
+}
+```
+
+Remember, the conditions is always evaluated from left to right. So if we have a `||`, it only needs to check the first condition if that's true in order evaluate the entire expression to true.
+
+Same with `&&`, goes from left to right. If the first of three is `true`, it must check the seconde on and the the third one and if one of them is `false` it will ignore the rest and just evaluate everyhing to `false`,
+
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
 
 #### `!` - Logical NOT
 
+If you put an exclamation mark before a variable or condition, it will be inverted. So if you write `!true`, it will be false. And `!false` will be true.
+
+```js
+const firstName = ""; // This is normally falsy.
+
+if (firstName) {
+  // some code. This won't run since it's falsy.
+}
+
+if (!firstName) {
+  //some code. This will run since the exclamation mark inverts the result of the evaluation.
+}
+```
+
+Thing of the `!`-sign to be NOT, or the opposite evaluation to what you have.
+
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
 
 #### `??` - Nullish Coalescing
+
+See this link for more info on [Nullish Coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
 
 [Back to top](#2024-10-24-intro-to-javascript)
