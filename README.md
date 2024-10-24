@@ -90,8 +90,8 @@ const lastName = "Fähnrich";
 Represents number, both integers and decimal values. Just remember that decimal values are written with a period and not a comma.
 
 ```js
-35 // Valid number
-45.3 // Also valid number
+35; // Valid number
+45.3; // Also valid number
 ```
 
 [Back to top](#2024-10-24-intro-to-javascript)
@@ -143,6 +143,14 @@ const somethingIsFalse = false;
 
 ### Date
 
+A Date is just a value that represents a date or time.
+
+```js
+const now = new Date();
+```
+
+This `new Date()` returns a date object that we can manipulate in many ways and use in our applications.
+
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
@@ -161,11 +169,74 @@ Variables is a way of storing values in resuable packages so to speak.
 
 ### var
 
+`var` is a key word that is used to create variables. And the key words is always paired with a variable name and a value, and the value can of course be of different data types.
+
+```js
+var firstName = "Niklas";
+console.log(firstName);
+```
+
+`var` has some special characteristics, one of them is that it is re-declarable. That means that we can declare the same variable again with a new value.
+
+```js
+var firstName = "Niklas";
+console.log(firstName); // Niklas
+
+var firstName = "Henrik"; // Re-declaration, it's valid.
+console.log(firstName); // Henrik
+```
+
+You can also re-assign the value on a `var`.
+
+```js
+var firstName = "Henrik";
+console.log(firstName); // Henrik
+
+firstName = "Erik"; // Re-assignment, it's valid.
+console.log(firstName); // Erik
+```
+
+`var` also has a function scoop, what is that? If a `var` is declared inside a function, it only lives inside that function. But if `var` is declared on the top level of a JS file, it gets "global" scope, which means it's accesable inside the entire JS-file.
+
+Because of this, DON'T use `var` at all! Use the newer ones `let` and `const` instead.
+
 [Back to top](#2024-10-24-intro-to-javascript)
 
 ---
 
 ### const
+
+`const` is also keyword for creating variables. It stands for 'constant' which means it is supposed to be constant. It means we shouldn't change this variable after it has been created.
+
+```js
+const age = 39;
+console.log(age); // 39
+
+age = 45; // Won't work, VSC will sometimes complain and browser will always complain.
+```
+
+We can not re-declare a `const`.
+
+```js
+const age = 39;
+const age = 45; // Won't work, VSC will complain.
+```
+
+`const` has a block scoop, which means if it's created inside of a pair of brackets, it only lives in there. If it's cerated at the top level of a JS-file, it lives inside the entire file.
+
+```js
+const firstName = "Niklas";
+const lastName = "Johnsson";
+
+if (true) {
+  const lastName = "Svensson"; // A totally different variable, it's another scope.
+  console.log(firstName); // Niklas
+  console.log(lastName);
+}
+
+console.log(firstName); // Exists.
+console.log(lastName); //Doesn't exist in this scope.
+```
 
 [Back to top](#2024-10-24-intro-to-javascript)
 
