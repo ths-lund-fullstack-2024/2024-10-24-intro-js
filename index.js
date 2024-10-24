@@ -33,14 +33,30 @@ a developer.`; // Works just fine!
 // console.log(number);
 // const name = "Niklas";
 
-const firstName = "Niklas";
-const lastName = "Johnsson";
+// const firstName = "Niklas";
+// const lastName = "Johnsson";
 
-if (true) {
-  const lastName = "Svensson"; // A totally different variable, it's another scope.
-  console.log(firstName); // Niklas
-  console.log(lastName);
+// if (true) {
+//   const lastName = "Svensson"; // A totally different variable, it's another scope.
+//   console.log(firstName); // Niklas
+//   console.log(lastName);
+// }
+
+// console.log(firstName); // Exists.
+// console.log(lastName); //Doesn't exist in this scope.
+
+// ############ if statements ############ //
+
+// const age = 20;
+
+// if (age > 18) {
+//   console.log("You are an adult.");
+// }
+
+const age = 16;
+
+if (age > 18) {
+  console.log("You are an adult.");
+} else {
+  console.log("You are still classed as a minor.");
 }
-
-console.log(firstName); // Exists.
-console.log(lastName); //Doesn't exist in this scope.
