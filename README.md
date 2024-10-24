@@ -25,6 +25,18 @@ We start with the foundations when it comes to JS. Data types, variables, user-i
 
 [If Statements](#if-statements)
 
+- [Basic if-syntax](#basic-if-syntax)
+- [if-else statement](#if-else-statement)
+- [Comparison Operators](#comparison-operators)
+  - [greater then, less then - <, >](#--greater-then-or-less-then)
+- [if-else-if statments](#if-else-if-statments)
+- [Truthy and Falsy](#truthy-and-falsy-values)
+- [Logical Operators](#logical-operators)
+  - [Logical AND - &&](#---logical-and)
+  - [Logical OR - ||](#---logical-or)
+  - [Logical NOT - !](#---logical-not)
+  - [Nullish Coalescing](#---nullish-coalescing)
+
 </details>
 
 ## Data Types in JavaScript
@@ -292,13 +304,15 @@ if (age > 18) {
 }
 ```
 
-This is fine, if we just want to check if the condition is `true`, but what if it's `false`, maybe we want to handle that case as well. Let's look at the `else` keyword. Here is the basic syntax
+### if-else statement
+
+This is fine, if we just want to check if the condition is `true`, but what if it's `false`? Maybe we want to handle that case as well. Let's look at the `else` keyword. Here is the basic syntax
 
 ```js
 if (conditon) {
-    // code to execute if condition is true
+  // code to execute if condition is true
 } else {
-    // code to execute if the condition is false.
+  // code to execute if the condition is false.
 }
 ```
 
@@ -316,29 +330,39 @@ if (age > 18) {
 
 This is called an if-else statment. It is very common of course.
 
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
 ### Comparison operators
 
 In order to evaluate our conditions we need tools for that, and they are called comparison operators. It's the characters that we use to compare the variables or whatever it is we are comparing.
 
-#### `>, <` - greater then, or less then
+#### greater then, or less then `>, <`
 
 Operator to check if something is greater then, or less then. It's very straight forward.
 
-#### `>=, <=` - greater than OR equal, less then OR equal.
+[Back to top](#2024-10-24-intro-to-javascript)
+
+#### greater than OR equal, less then OR equal `>=, <=`
 
 Same as above but with the added possibility for the "terms", _( in lack of a better word )_, to be equal to eachother.
 
-#### `==` - equal _( but NOT strict )_
+[Back to top](#2024-10-24-intro-to-javascript)
+
+#### equal _( but NOT strict )_ `==`
 
 The compare the two things to see if they are equal but not strict equal. It means that we can compare to values of different data types, and still get a `true` value. This is called equal with cohersion. It means that the editor or browser will try to convert one of the values to the other data type.
 
 ```js
-"10" == 10 // => will be true
+"10" == 10; // => will be true
 
-100 == "hundred" // => will be false, since they don't have the same kind of value. 
+100 == "hundred"; // => will be false, since they don't have the same kind of value.
 ```
 
-#### `===` - equal _( AND strict )_
+[Back to top](#2024-10-24-intro-to-javascript)
+
+#### equal _( AND strict )_ `===`
 
 Same as above but the values must be of the same data type.
 
@@ -350,8 +374,65 @@ Same as above but the values must be of the same data type.
 
 In the majority of cases, always go for the strict equal comparison.
 
-#### `!=` - not equal _( NOT strict)_
+[Back to top](#2024-10-24-intro-to-javascript)
 
-#### `!==` - not equal _( AND strict)_
+#### not equal _( NOT strict)_ `!=`
+
+#### not equal _( AND strict)_ `!==`
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+### if-else-if statments
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+### Truthy and Falsy values
+
+| Value                   | Type      | Truthy or Falsy |
+| ----------------------- | --------- | --------------- |
+| `false`                 | Boolean   | Falsy           |
+| `0`                     | Number    | Falsy           |
+| `-0`                    | Number    | Falsy           |
+| `""` (empty string)     | String    | Falsy           |
+| `null`                  | Object    | Falsy           |
+| `undefined`             | Undefined | Falsy           |
+| `NaN` (Not a Number)    | Number    | Falsy           |
+| `true`                  | Boolean   | Truthy          |
+| Non-zero numbers        | Number    | Truthy          |
+| Non-empty strings       | String    | Truthy          |
+| `{}` (empty object)     | Object    | Truthy          |
+| `[]` (empty array)      | Object    | Truthy          |
+| Arrays with content     | Object    | Truthy          |
+| Objects with properties | Object    | Truthy          |
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+### Logical operators
+
+#### `&&` - Logical AND
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+#### `||` - Logical OR
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+#### `!` - Logical NOT
+
+[Back to top](#2024-10-24-intro-to-javascript)
+
+---
+
+#### `??` - Nullish Coalescing
 
 [Back to top](#2024-10-24-intro-to-javascript)
